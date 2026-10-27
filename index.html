@@ -1,53 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Server Hosting Plans</title>
-    
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8">
+  <title>Server Hosting Plans</title>
+  <link rel="stylesheet" href="css/index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="decor-circle"></div>
-    <h1 class="title">Select Your Server Node</h1>
+  <div class="loader-container" id="loader">
+    <div class="spinner"></div>
+    <p>Connecting to Cluster...</p>
+  </div>
 
-    <div class="card-container">
-        
+  <div class="main-content" id="content">
+    <header class="site-header">
+      <div class="logo">CORE DECISION //</div>
+      <nav class="header-nav">
+        <a href="#" class="nav-link">Dashboard</a>
+        <a href="#" class="nav-link">Compute Nodes</a>
+        <a href="#" class="nav-link">Storage</a>
+        <a href="#" class="nav-link">Settings</a>
+      </nav>
+    </header>
+
+    <div class="decor-circle"></div>
+
+    <main>
+      <h1 class="title">Select Your Server Node</h1>
+
+      <div class="card-container">
         <div class="card card-1">
+          <div class="card-content">
             <h2>Micro Node</h2>
             <ul class="descrpt">
-                <li>vCPU: 2 Cores</li>
-                <li>RAM: 4 GB ECC</li>
-                <li>Storage: 80 GB NVMe</li>
+              <li>vCPU: 2 Cores</li>
+              <li>RAM: 4 GB ECC</li>
+              <li>Storage: 80 GB NVMe</li>
             </ul>
-            <div class="price">$15/mo</div>
-            <button class="card-btn">More details</button>
+            <span class="price">$15/mo</span>
+            <button class="btn btn-primary">More details</button>
+          </div>
         </div>
 
         <div class="card card-2">
+          <div class="card-content">
             <h2>Pro Node</h2>
             <ul class="descrpt">
-                <li>vCPU: 8 Cores</li>
-                <li>RAM: 32 GB ECC</li>
-                <li>Storage: 500 GB NVMe</li>
+              <li>vCPU: 8 Cores</li>
+              <li>RAM: 32 GB ECC</li>
+              <li>Storage: 500 GB NVMe</li>
             </ul>
-            <div class="price">$45/mo</div>
-            <button class="card-btn">More details</button>
+            <span class="price">$45/mo</span>
+            <button class="btn btn-primary">More details</button>
+          </div>
         </div>
 
         <div class="card card-3">
+          <div class="card-content">
             <h2>Max Node</h2>
             <ul class="descrpt">
-                <li>vCPU: 32 Cores</li>
-                <li>RAM: 128 GB ECC</li>
-                <li>Storage: 2 TB NVMe</li>
+              <li>vCPU: 32 Cores</li>
+              <li>RAM: 128 GB ECC</li>
+              <li>Storage: 2 TB NVMe</li>
             </ul>
-            <div class="price">$120/mo</div>
-            <button class="card-btn">More details</button>
+            <span class="price">$120/mo</span>
+            <button class="btn btn-primary">More details</button>
+          </div>
         </div>
-    </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('loader').style.display = 'none';
+      document.getElementById('content').style.display = 'block';
+    }, 1500);
+  </script>
 </body>
 </html>
